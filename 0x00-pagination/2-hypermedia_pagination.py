@@ -56,6 +56,4 @@ class Server:
         else:
             hyper_data["prev_page"] = None
         hyper_data["total_pages"] = int(data_count/page_size) + 1
-        
         return hyper_data
-
