@@ -14,7 +14,7 @@ babel = Babel(app)
 @app.route('/')
 def index() -> str:
     """index view"""
-    return render_template('0-index.html')
+    return render_template('1-index.html')
 
 
 if __name__ == '__main__':
