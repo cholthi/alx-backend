@@ -26,8 +26,10 @@ users = {
 
 def get_user() -> Union[str, None]:
     """ get user from user store"""
-    user_id = request.args.get('login_as')
-    return users.get(int(user_id), None)
+    login_id = request.args.get('login_as')
+    if login_id:
+        return users.get(int(login_id))
+    return None
 
 
 @app.before_request
