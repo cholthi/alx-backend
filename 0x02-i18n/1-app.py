@@ -5,15 +5,15 @@ from flask_babel import Babel
 
 
 class Config:
-    """config"""
+    """App configuration"""
     LANGAUGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
 app.config.from_object(Config)
+app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
