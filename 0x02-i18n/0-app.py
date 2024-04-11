@@ -8,10 +8,10 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def index() ->str:
+def index() -> str:
     """index view"""
     return render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host=0.0.0.0, port=5000)
