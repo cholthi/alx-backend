@@ -24,16 +24,16 @@ users = {
 }
 
 
-def get_user(user_id: str) -> Union[str, None]:
+def get_user() -> Union[str, None]:
     """ get user from user store"""
+    user_id = request.args.get('login_as')
     return users.get(user_id, None)
 
 
 @app.before_request
 def before_request() -> None:
     """executed before all views"""
-    if get_user(request.args.get('login_as')):
-        g.user = get_user(request.args.get('login_as'))
+    g.user = get_user()
 
 
 @babel.localeselector
